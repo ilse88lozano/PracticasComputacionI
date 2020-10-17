@@ -16,7 +16,7 @@ int main(){
     cin>>n;
     int A[n][n];
     int B[n][n];
-    int R[n][n];
+    int R=0;
     for (int i = 0; i < n; i++) {
         for(int j=0; j< n;j++){
             A[i][j]=(rand()%10)+1;
@@ -68,13 +68,15 @@ int main(){
         cout<<"Matriz Resultante:"<<endl;
         for (int i = 0; i < n; i++) {
             for(int j=0; j< n;j++){
+                R=0;
                 for (int k = 0; k < n; ++k) {
-                    R[i][j]=A[i][k]*B[k][j];
-                    cout<<R[i][j]<<"  ";
+                    R+=A[i][k]*B[k][j];
                 }
+                cout<<R<<"  ";
             }
             cout<<endl;
-        }    }
+        }
+    }
     if (symb == '/'){
         cout<<"Matriz Resultante:"<<endl;
         for (int i = 0; i < n; i++) {
