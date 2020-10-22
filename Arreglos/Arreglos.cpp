@@ -1,3 +1,8 @@
+ /*===========================================================
+ * AUTHOR: Ilse Lozano
+ * ilse.lofi@gmail.com
+ * 10-10-2020
+ ============================================================*/
 #include <iostream>
 #include <array>
 
@@ -32,7 +37,7 @@ int main()
         cin >> factor;  // Pedimos el factor a multiplicar
         arr = MultiplicarArreglo(arr, factor); // Multiplicamos nuestro arreglo principal por el factor y el resultado lo asignamos a nuestro arreglo principal.
     }
-    // Si se ingresa la suma
+        // Si se ingresa la suma
     else if (decision == '+') {
         array<float, LEN> arr2 = {0}; // Creamos el segundo arreglo y lo inicializamos en ceros
         arr2 = LlenarArreglo(); // Pedimos al usuario que llene otro arreglo y lo asignamos a nuetsro nuevo arreglo
@@ -54,17 +59,32 @@ void ImprimirArreglo(array<float, LEN> arreglo)
 // Llena un arreglo de tamaño LEN y lo "regresa" como resultado
 array<float, LEN> LlenarArreglo()
 {
-    // TODO
+    array<float, LEN> arreglo;
+    float num;
+    for (int i=0; i<LEN; i++){
+        cout<<"Ingresa un número"<<endl;
+        cin>>num;
+        arreglo[i]=num;
+    }
+    return (arreglo);
 }
 
 // Multiplica cada elemento del arreglo 'arreglo' por el factor 'mult'
 array<float, LEN> MultiplicarArreglo(array<float, LEN> arreglo, float multiplo)
 {
-    // TODO
+    array<float, LEN> result;
+    for (int i=0; i<LEN; i++){
+        result[i]=((arreglo[i]) * (multiplo));
+    }
+    return (result);
 }
 
 // Suma elemento a elemento los arreglos 'arr1' y 'arr2' y regresa el arreglo resultante
 array<float, LEN> SumarArreglos(array<float, LEN> arr1, array<float, LEN> arr2)
 {
-    // TODO
+    array<float, LEN> result;
+    for (int i=0; i<LEN; i++){
+        result[i]=((arr1[i]) + (arr2[i]));
+    }
+    return (result);
 }
