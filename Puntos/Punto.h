@@ -1,5 +1,10 @@
-int main() {
-    class Punto2D{
+//
+// Created by usuario on 11/5/20.
+//
+
+#ifndef PUNTOS_PUNTO_H
+#define PUNTOS_PUNTO_H
+class Punto2D {
     private:
         float x{0};
         float y{0};
@@ -11,4 +16,6 @@ int main() {
         float GetX();
         float GetY();
     };
-}
+
+
+#endif //PUNTOS_PUNTO_H
