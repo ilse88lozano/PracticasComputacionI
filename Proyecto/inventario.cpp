@@ -46,8 +46,8 @@ void inventario::printInv(vector<string> articleVec,vector<int> nArticles,vector
 
 //Calcula ganancia con base en los costos de compra y venta
 float inventario::calcGain(vector<int> nArticles,vector<float> Cost,vector<float> Sell){
-    sumCost=0;
-    sumVent=0;
+    float sumCost=0;
+    float sumVent=0;
     for (int i=0;i<nArticles.size();i++){
         sumCost+=Cost[i]*nArticles[i];
         sumVent+=Sell[i]*nArticles[i];
