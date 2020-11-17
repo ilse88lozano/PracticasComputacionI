@@ -22,7 +22,7 @@ void inventario::DelArticles(int index,int quant){
 
 void inventario::DelArticle( int index,int quant){
 
-    nArticles[index]-=nArticles[quant];
+    nArticles[index]-=quant;
 }
 
 //Establece el numero de articulos para cada articlo
@@ -64,5 +64,9 @@ float inventario::calcGain(){
         sumVent+=Sell[i]*nArticles[i];
     }
     return(sumVent-sumCost);
+}
+
+int inventario::getnArticles(int i){
+    return nArticles[i];
 }
 
