@@ -67,7 +67,7 @@ int main() {
                 cin>>index;
                 cout<<"Ingrese la cantidad de elementos a eliminar"<<endl;
                 cin>>quant;
-                if(quant>=nArticles[index]){
+                if(quant>=minventario.getnArticles(index)){
                     minventario.DelArticles(index,quant);
                 }
                 else{
