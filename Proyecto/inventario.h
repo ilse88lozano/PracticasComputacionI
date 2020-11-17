@@ -1,6 +1,9 @@
 
+
 #ifndef PROYECTO_COMPU_INVENTARIO_H
 #define PROYECTO_COMPU_INVENTARIO_H
+#include<string>
+#include <vector>
 #include<string>
 #include <vector>
 
@@ -22,7 +25,7 @@ public:
     void setSell(float costsell );
     void printInv();
     float calcGain();
+    int getnArticles(int i);
 };
-
 
 #endif //PROYECTO_COMPU_INVENTARIO_H
