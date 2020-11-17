@@ -6,13 +6,13 @@
 using namespace std;
 
 //Agregar artículos
-vector<string> inventario::AddArticle(vector<string> articleVec,string article){
-    articleVec.push_back(article);
-    return(articleVec);
+void inventario::AddArticle(string art){
+    articleVec.push_back(art);
+    return;
 }
 
 //Borrar artículos
-void inventario::DelArticles(vector<string> articleVec,vector<int> nArticles,vector<float> Cost,vector<float> Sell, int index,int quant){
+void inventario::DelArticles(int index,int quant){
 
     articleVec.erase(articleVec.begin() + index );
     nArticles.erase(nArticles.begin() + index );
@@ -20,33 +20,31 @@ void inventario::DelArticles(vector<string> articleVec,vector<int> nArticles,vec
     Sell.erase(Sell.begin()+index);
 }
 
-void inventario::DelArticle(vector<int> nArticles, int index,int quant){
+void inventario::DelArticle( int index,int quant){
 
     nArticles[index]-=nArticles[quant];
 }
 
 //Establece el numero de articulos para cada articlo
-vector<int> inventario::setAmount(vector<int> nArticles,int amount){
+void inventario::setAmount(int amount){
     nArticles.push_back(amount);
-    return(nArticles);
+    return;
 }
 
 //Establece el costo de compra
-vector<float> inventario::setCost(vector<float> Cost,float cost){
-
-    Cost.push_back(cost);
-    return(Cost);
+void inventario::setCost(float costo){
+    Cost.push_back(costo);
+    return;
 }
 //Establece el costo de venta
-vector<float> inventario::setSell(vector<float> Sell,float cost_sell ){
-
+void inventario::setSell(float cost_sell ){
     Sell.push_back(cost_sell);
-    return(Sell);
+    return;
 }
 
 
 //Tenemos los 4 vectores: articulo, cantidad, costo y  precio de venta
-void inventario::printInv(vector<string> articleVec,vector<int> nArticles,vector<float> Cost,vector<float> Sell){
+void inventario::printInv(){
     //Imprime los encabezados
     cout<<"|"<<"Articulos"<<"\t"<<"No. Articulos"<<"\t"<<"Costo compra"<<"\t"<<"Costo venta"<<"\t"<<"|"<<endl;
     //Imprime una linea divisoria
@@ -58,7 +56,7 @@ void inventario::printInv(vector<string> articleVec,vector<int> nArticles,vector
 }
 
 //Calcula ganancia con base en los costos de compra y venta
-float inventario::calcGain(vector<int> nArticles,vector<float> Cost,vector<float> Sell){
+float inventario::calcGain(){
     float sumCost=0;
     float sumVent=0;
     for (int i=0;i<nArticles.size();i++){
@@ -66,3 +64,5 @@ float inventario::calcGain(vector<int> nArticles,vector<float> Cost,vector<float
         sumVent+=Sell[i]*nArticles[i];
     }
     return(sumVent-sumCost);
+}
+
