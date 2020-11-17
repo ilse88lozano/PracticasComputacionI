@@ -10,6 +10,7 @@ int option_menu();
 
 int main() {
     //Declaracion de variables
+
     vector<string> articleVec;
     vector<int> nArticles;
     vector<float> Cost;
@@ -17,7 +18,7 @@ int main() {
 
     //Creamos el objeto minventario de la clase inventario para llamar funciones
     inventario minventario;
-    menu();
+    //menu();  <- Se debe borrar para que no salga repetido
 
     int res=1;
 
@@ -41,21 +42,21 @@ int main() {
                     cin >> price;
                     cout << "Ingrese el precio de venta del articulo" << endl;
                     cin >> costsell;
-                    minventario.AddArticle(articleVec, answer);
-                    minventario.setAmount(nArticles, amount);
-                    minventario.setCost(Cost, price);
-                    minventario.setSell(Sell, costsell);
+                    minventario.AddArticle(answer);
+                    minventario.setAmount(amount);
+                    minventario.setCost(price);
+                    minventario.setSell(costsell);
                     cout<<"Si desea agregar otro articulo ingrese 1, de lo contrario presione otro numero"<<endl;
                     cin>>num;
                 }
                 break;
             }
             case 2: {
-                minventario.printInv(articleVec, nArticles, Cost, Sell);
+                minventario.printInv();
                 break;
             }
             case 3: {
-                float gain = minventario.calcGain(nArticles, Cost, Sell);
+                float gain = minventario.calcGain();
                 cout << "La ganancia aproximada con base en el inventario es: " << gain << endl;
                 break;
 
@@ -67,10 +68,10 @@ int main() {
                 cout<<"Ingrese la cantidad de elementos a eliminar"<<endl;
                 cin>>quant;
                 if(quant>=nArticles[index]){
-                    minventario.DelArticles(articleVec,nArticles,Cost,Sell,index,quant);
+                    minventario.DelArticles(index,quant);
                 }
                 else{
-                    minventario.DelArticle(nArticles,index, quant);
+                    minventario.DelArticle(index, quant);
                 }
                 break;
             }
@@ -96,3 +97,4 @@ int option_menu(){
     cin>>response;
     return(response);
 }
+
