@@ -1,6 +1,3 @@
-//
-// Created by usuario on 11/27/20.
-//
 #include "Molecula.h"
 
 void Molecula::AgregarGrupo(Grupo x){
